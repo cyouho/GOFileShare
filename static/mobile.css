@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.breadcrumbs {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+}
+
+.breadcrumbs a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 移动端更紧凑 */
+    gap: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.item {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.item:hover {
+    background: #e9ecef;
+}
+
+.item.directory {
+    border: 2px solid #007bff;
+}
+
+.item.file {
+    border: 2px solid #6c757d;
+}
+
+.item span {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.item.audio img {
+    width: 40px;
+    height: 40px;
+}
+
+.item.video img {
+    width: 80px;
+    height: 80px;
+}
+
+.loading {
+    text-align: center;
+    padding: 10px;
+    color: #666;
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    margin: 5vh auto;
+    padding: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 85vh;
+    background: #fff;
+    border-radius: 5px;
+    overflow-y: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+#mediaPreview img, #mediaPreview video {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+#mediaPreview audio {
+    width: 100%;
+    max-width: 400px;
+}

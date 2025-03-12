@@ -1,0 +1,36 @@
+{{ define "myfiles.html" }}
+<div class="toolbar" id="toolbar">
+    <button id="refreshBtn"><i class="fas fa-sync"></i> 刷新</button>
+    <div class="breadcrumb" id="breadcrumb"></div>
+</div>
+<div class="disk-list" id="diskList">
+    <h2><i class="fas fa-hdd"></i> 我的文件 - 磁盘列表</h2>
+    <table id="diskTable">
+        <thead>
+            <tr>
+                <th data-sort="name">磁盘名称</th>
+                <th data-sort="capacity">总容量</th>
+                <th data-sort="used">已用空间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="diskTableBody"></tbody>
+    </table>
+</div>
+<div class="file-list" id="content" style="display: none;">
+    <h2><i class="fas fa-folder-open"></i> 当前目录</h2>
+    <table id="fileTable">
+        <thead>
+            <tr>
+                <th data-sort="name">文件名</th>
+                <th data-sort="size">大小</th>
+                <th data-sort="date">修改日期</th>
+                <th>类型</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="fileTableBody"></tbody>
+    </table>
+</div>
+{{ end }}

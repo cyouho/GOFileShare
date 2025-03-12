@@ -1,0 +1,21 @@
+{{ define "shared.html" }}
+<div class="toolbar" id="toolbar">
+    <button id="refreshBtn"><i class="fas fa-sync"></i> 刷新</button>
+    <div class="breadcrumb" id="breadcrumb"></div>
+</div>
+<div class="file-list" id="content">
+    <h2><i class="fas fa-share-alt"></i> 共享文件</h2>
+    <table id="fileTable">
+        <thead>
+            <tr>
+                <th data-sort="name">文件名</th>
+                <th data-sort="size">大小</th>
+                <th data-sort="date">修改日期</th>
+                <th>类型</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="fileTableBody"></tbody>
+    </table>
+</div>
+{{ end }}
