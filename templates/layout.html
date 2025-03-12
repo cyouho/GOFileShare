@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>磁盘浏览器 - {{ .Title }}</title>
+    <link rel="stylesheet" href="/static/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar" id="sidebar">
+            <div class="toggle-btn" id="toggleBtn">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="logo">
+                <i class="fas fa-database logo-icon"></i>
+                <span class="logo-text">服务端</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item {{ if eq .Page "overview" }}active{{ end }}" onclick="window.location.href='/'"><i class="fas fa-home"></i><span>概览</span></li>
+                <li class="nav-item {{ if eq .Page "myfiles" }}active{{ end }}" onclick="window.location.href='/myfiles'"><i class="fas fa-folder"></i><span>我的文件</span></li>
+                <li class="nav-item {{ if eq .Page "shared" }}active{{ end }}" onclick="window.location.href='/shared'"><i class="fas fa-share-alt"></i><span>共享文件</span></li>
+                <li class="nav-item"><i class="fas fa-users"></i><span>用户管理</span></li>
+                <li class="nav-item"><i class="fas fa-cog"></i><span>系统设置</span></li>
+            </ul>
+        </nav>
+
+        <main class="main-content" id="mainContent">
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            {{ if eq .Page "overview" }}
+            {{ template "overview.html" . }}
+            {{ else if eq .Page "myfiles" }}
+            {{ template "myfiles.html" . }}
+            {{ else if eq .Page "shared" }}
+            {{ template "shared.html" . }}
+            {{ else }}
+            <p>未知页面</p>
+            {{ end }}
+        </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
